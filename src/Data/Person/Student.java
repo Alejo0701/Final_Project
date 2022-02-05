@@ -18,11 +18,11 @@ public class Student extends Person {
     }
 
     public String showStudentInfo(){
-        String data = "";
-        data += "Student: " + getName() + "\n";
-        data += "ID: " + getId() + "\n";
-        data += "Level: " + getLevel() + "\n";
-        return data;
+        String studentInfo = "";
+        studentInfo += "Student: " + getName() + "\n";
+        studentInfo += "ID: " + getId() + "\n";
+        studentInfo += "Level: " + getLevel() + "\n";
+        return studentInfo;
     }
 
 

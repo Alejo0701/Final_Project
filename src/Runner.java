@@ -69,7 +69,7 @@ public class Runner {
 
     public static void printTeachersInfo(){
         for (Teacher teacher : University.teachers) {
-            System.out.println(teacher.TeacherInfo());        }
+            System.out.println(teacher.teacherInfo());        }
     }
 
     public static void pressEnterToContinue(){

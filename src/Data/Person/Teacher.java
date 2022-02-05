@@ -59,7 +59,7 @@ public class Teacher extends Person {
         return salary;
     }
 
-    public String TeacherInfo() {
+    public String teacherInfo() {
         DecimalFormat df = new DecimalFormat("###,###,###");
         String str = "";
         str += "Name: " + this.getName() + "\n";

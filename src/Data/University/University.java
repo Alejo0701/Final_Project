@@ -42,27 +42,27 @@ public class University {
     }
 
     public Teacher getTeacherbyID(int id) {
-        for (Teacher t : teachers) {
-            if (t.getId() == id) {
-                return t;
+        for (Teacher teacher : teachers) {
+            if (teacher.getId() == id) {
+                return teacher;
             }
         }
         return null;
     }
 
     public Student getStudentbyID(int id) {
-        for (Student s : students) {
-            if (s.getId() == id) {
-                return s;
+        for (Student student : students) {
+            if (student.getId() == id) {
+                return student;
             }
         }
         return null;
     }
 
     public Course getCoursebyName(String name) {
-        for (Course c : courses) {
-            if (c.getCourseName().equals(name)) {
-                return c;
+        for (Course course : courses) {
+            if (course.getCourseName().equals(name)) {
+                return course;
             }
         }
         return null;
@@ -75,15 +75,14 @@ public class University {
         if (courses.size() == 0) {
             strcourse = "There are no courses";
         }
-
         if (position > courses.size()) {
             strcourse = "The course id is not valid";
         }
         if (position <= courses.size()) {
             position--;
-            for (Course c : courses) {
-                if (c.getCourseName().equals(courses.get(position).getCourseName())) {
-                    strcourse = c.getCourseName();
+            for (Course course : courses) {
+                if (course.getCourseName().equals(courses.get(position).getCourseName())) {
+                    strcourse = course.getCourseName();
                 }
             }
         }
@@ -92,15 +91,15 @@ public class University {
 
     public String showCourseInfo(String courseName) {
         String strcourse = "";
-        for (Course c : courses) {
-            if (c.getCourseName().equals(courseName)) {
+        for (Course course : courses) {
+            if (course.getCourseName().equals(courseName)) {
                 strcourse += "Course Information: " + "\n";
-                strcourse += "Course name: " + courseName + "\n";
-                strcourse += "Class room: " + c.getClassRoom() + "\n";
-                strcourse += "Teacher: " + c.getTeacher().getName() + "\n";
+                strcourse += "Course name: " + course.getCourseName() + "\n";
+                strcourse += "Class room: " + course.getClassRoom() + "\n";
+                strcourse += "Teacher: " + course.getTeacher().getName() + "\n";
                 strcourse += "Students: " + "\n";
-                for (Student s : c.getCourseStudents()) {
-                    strcourse += s.getName() + " - ID:" +s.getId() + "\n";
+                for (Student student : course.getCourseStudents()) {
+                    strcourse += student.getName() + " - ID:" +student.getId() + "\n";
                 }
             }
         }

@@ -52,7 +52,6 @@ public class Course {
     }
 
     public String setCourseStudent(Student student){
-        //validate if student is already in the course
         if(!courseStudents.contains(student)){
             courseStudents.add(student);
             return "Student added to course: " + courseName;
