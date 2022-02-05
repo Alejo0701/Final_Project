@@ -51,14 +51,14 @@ public class Course {
         this.courseStudents = courseStudents;
     }
 
-    public void setCourseStudent(Student student){
+    public String setCourseStudent(Student student){
         //validate if student is already in the course
         if(!courseStudents.contains(student)){
             courseStudents.add(student);
-            System.out.println("Student added to course: " + courseName);
+            return "Student added to course: " + courseName;
         }
         else{
-            System.out.println("Student already in course");
+            return "Student already in course";
         }
     }
 

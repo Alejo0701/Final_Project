@@ -22,35 +22,22 @@ public class University {
         this.students.add(student);
     }
 
-    public void printExistingCourses() {
+    public String printExistingCourses() {
+        String result = "";
         int i = 1;
         if (courses.size() == 0) {
-            System.out.println("No courses exist");
+            result = "There are no courses";
         }
         if (courses.size() > 0) {
             for (Course course : courses) {
-                System.out.println(i + " - " + course.getCourseName()+ " - " + courses.indexOf(course));
+                result+= i + " - " + course.getCourseName()+ " - " + courses.indexOf(course)+"\n";
                 i++;
             }
         }
+        return result;
     }
 
     public boolean createNewCourse(String courseName, String classRoom, Teacher teacher, ArrayList<Student> students) {
-
-        if (courseName.equals("")) {
-            System.out.println("Data.Course name is empty");
-            return false;
-        }
-        if (classRoom.equals("")) {
-            System.out.println("Class room is empty");
-            return false;
-        }
-
-        if (teacher == null) {
-            System.out.println("Teacher is empty");
-            return false;
-        }
-
         Course course = new Course(courseName, classRoom, teacher, students);
         this.courses.add(course);
         return true;
@@ -126,26 +113,25 @@ public class University {
         return strcourse;
     }
 
-    public void enrollStudentInCourse(String courseName, Student student) {
+    public String enrollStudentInCourse(String courseName, Student student) {
         Course course = getCoursebyName(courseName);
         if (course != null) {
-            course.setCourseStudent(student);
+            return course.setCourseStudent(student);
         }
         else {
-            //System.out.println("Data.Course not found");
-            System.out.println("enrollStudentInCourse");
+            return "Course not found";
         }
     }
 
-    public void listAllCoursesFromStudent(Student student) {
+    public String listAllCoursesFromStudent(Student student) {
         String strcourses = "";
-        System.out.println(student.getName() + "\n");
-        for (Course c : courses) {
-            if (c.getCourseStudents().contains(student)) {
-                strcourses += c.getCourseName() + "\n";
+        strcourses+="Student: "+student.getName() + "\n"+"Courses: \n";
+        for (Course course : courses) {
+            if (course.getCourseStudents().contains(student)) {
+                strcourses += course.getCourseName() + "\n";
             }
         }
-        System.out.println(strcourses);
+        return strcourses;
     }
 
     public int coursesSize() {
