@@ -9,7 +9,6 @@ public class Teacher extends Person {
     private int yearsOfExperience;
     private int activeHoursPerWeek;
 
-
     public Teacher(String name, String type, int baseSalary, int yearsOfExperience, int activeHoursPerWeek) {
         super(name);
         this.type = type;

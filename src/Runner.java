@@ -114,10 +114,8 @@ public class Runner {
             return "Course created";
         }
 
-
     }
 
-    //method for case 2
     public static void printAllCourses(){
         University university = new University();
         Scanner scan = new Scanner(System.in);
@@ -128,7 +126,6 @@ public class Runner {
         }
         else {
             System.out.println(university.printExistingCourses());
-
             boolean backToMenu = false;
             while (!backToMenu) {
                 System.out.println("\nEnter the course ID to see the information of the course: ");
@@ -147,7 +144,6 @@ public class Runner {
                         backToMenu = true;
                         courseIDValidation = true;
                     }
-
                 }
             }
             pressEnterToContinue();
@@ -217,7 +213,6 @@ public class Runner {
                 addStudents = false;
             }
         }
-
         NewCourse(courseNametoCreate, classRoomId, teacher, students);
         pressEnterToContinue();
     }

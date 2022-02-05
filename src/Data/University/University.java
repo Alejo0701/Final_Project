@@ -12,8 +12,6 @@ public class University {
     public static ArrayList<Teacher> teachers = new ArrayList<Teacher>();
     private static ArrayList<Course> courses = new ArrayList<Course>();
 
-
-    //add a teacher to the list
     public void addTeacher(Teacher teacher) {
         this.teachers.add(teacher);
     }
@@ -43,8 +41,6 @@ public class University {
         return true;
     }
 
-
-
     public Teacher getTeacherbyID(int id) {
         for (Teacher t : teachers) {
             if (t.getId() == id) {
@@ -71,8 +67,6 @@ public class University {
         }
         return null;
     }
-
-
 
     public String getCourseNameByPosition(int position) {
 
@@ -137,8 +131,5 @@ public class University {
     public int coursesSize() {
         return courses.size();
     }
-
-
-
 
 }

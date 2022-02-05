@@ -9,7 +9,6 @@ public class Student extends Person {
         this.level = level;
     }
 
-
     public String getLevel() {
         return level;
     }
