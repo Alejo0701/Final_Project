@@ -21,7 +21,7 @@ public class Runner {
             System.out.println("1. Print teachers information");
             System.out.println("2. Print Courses");
             System.out.println("3. Create new Student and add to a course");
-            System.out.println("4. Create new Data.Course with a teacher and add students");
+            System.out.println("4. Create new Course with a teacher and add students");
             System.out.println("5. List all courses of a Student");
             System.out.println("6. Exit");
             System.out.println("\nEnter your choice: ");
